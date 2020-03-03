@@ -1,8 +1,8 @@
 <p>
     <input #checkbox type="checkbox" value="even">Even?<br>
     <input #rows type="text" name="rows">
-    <button (click)="onClick(rows.value)">Click</button>
+    <button (click)="onClick(rows.value, checkbox.checked)">Click</button>
 </p>
-<pre>
+<pre >
     {{ floydString}}
 </pre>

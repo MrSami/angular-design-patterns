@@ -1,30 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  } from '@angular/core';
+import { TriangleService } from 'src/app/services/triangle.service';
+
 
 @Component({
   selector: 'app-floyd',
   templateUrl: './floyd.component.html',
   styleUrls: ['./floyd.component.css']
 })
-export class FloydComponent implements OnInit {
+export class FloydComponent  {
 
   floydString : string = "";
-  private static startOfAlphabet = 97;
 
-  constructor() { }
+  constructor( private triangleService : TriangleService) { }
 
-  
-  ngOnInit(): void {
-  }
 
-  onClick(rows:number): void {
-    let currentLetter = FloydComponent.startOfAlphabet;
-    for (let i=0; i<rows; i++){
-      for (let j=0; j<i; j++){
-        this.floydString += String.fromCharCode(currentLetter) + " ";
-        currentLetter++;
-      }
-      this.floydString += "\n\r";
+  onClick(rows:number, checked:boolean): void {
+    if (checked){
+      this.floydString = this.triangleService.evenFloydTriangle(rows);
+    
     }
-
+    else {
+      this.floydString = this.triangleService.floydTriangle(rows);
+    }
   }
 }

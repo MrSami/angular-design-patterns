@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FloydComponent } from './components/floyd/floyd.component';
+import { TriangleService } from './services/triangle.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { FloydComponent } from './components/floyd/floyd.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TriangleService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
