@@ -10,6 +10,7 @@ import { TriangleService } from 'src/app/services/triangle.service';
 export class FloydComponent  {
 
   floydString : string = "";
+  color : "yellow" | "red";
 
   constructor( private triangleService : TriangleService) { }
 
@@ -17,10 +18,11 @@ export class FloydComponent  {
   onClick(rows:number, checked:boolean): void {
     if (checked){
       this.floydString = this.triangleService.evenFloydTriangle(rows);
-    
+      this.color = "yellow";
     }
     else {
       this.floydString = this.triangleService.floydTriangle(rows);
+      this.color = "red";
     }
   }
 }

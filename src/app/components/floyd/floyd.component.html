@@ -3,6 +3,6 @@
     <input #rows type="text" name="rows">
     <button (click)="onClick(rows.value, checkbox.checked)">Click</button>
 </p>
-<pre >
-    {{ floydString}}
+<pre appPreview [highlightColor]="color">
+    {{ floydString | paragraph}}
 </pre>
